@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Searchbar from './Searchbar';
-import { useContext } from 'react';
-import FavoritesContext from '../FavoritesContext';
+//import { useContext } from 'react';
+//import FavoritesContext from '../FavoritesContext';
 
 
 function Navbar() {
-    const { items } = useContext(FavoritesContext);
+    //const { items } = useContext(FavoritesContext);
 
     return (
         <div className='navbar'>
@@ -18,7 +18,7 @@ function Navbar() {
             </Link>
             <Searchbar />
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favorites'>Favorites: <span>{items.length}</span></h4>
+                <h4 className='favor'>Favorites:</h4>
             </Link>
         </div>
     )

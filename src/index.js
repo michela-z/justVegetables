@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import _ from 'lodash';
 
-console.log(_.join(['Another', 'module', 'loaded!'], ' '));
+console.log(_.join(['Index', 'module', 'loaded!'], ' '));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

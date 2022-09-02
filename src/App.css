@@ -22,14 +22,14 @@ body {
     padding: 0 10%;
 }
 
-.favorites {
+.favor {
     color: white;
     font-weight: 400;
     margin-left: 30px;
     width: 100%;
 }
 
-.favorites:hover {
+.favor:hover {
     text-decoration: underline 1px white;
 }
 
@@ -530,7 +530,7 @@ h2 {
     .all-info li {
         margin-left: 20px;
     }
-    .favorites {
+    .favor {
         margin-top: 10px;
         margin-left: auto;
     }
