@@ -1,6 +1,7 @@
 {
-  "name": "projetto-finale-react",
+  "name": "projetto-react",
   "version": "0.1.0",
+  "homepage": "https://michela-z.github.io/justVegetables",
   "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -18,6 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "serve": "webpack-dev-server --mode development --open --hot",
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
@@ -53,6 +56,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "source-map-loader": "^4.0.0",
     "url-loader": "^4.1.1",
