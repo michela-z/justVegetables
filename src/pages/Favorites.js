@@ -14,7 +14,7 @@ function Favorites({ title, image, id }) {
     }
 
     const removeFavorite = (id) => {
-        const newFavoriteList = items.filter((item) => item.id !== id);
+        const newFavoriteList = items?.filter((item) => item.id !== id);
         setItems(newFavoriteList);
         saveToLocalStorage(newFavoriteList);
     }
@@ -25,7 +25,7 @@ function Favorites({ title, image, id }) {
             <div className='main-container'>
                 <h2>Favorites</h2>
                 <div className='favorites-cnt'>
-                    {items.map((item) => (
+                    {items?.map((item) => (
                     <div key={item.id}>
                         <div className='favorite-page'>
                             <div className='favorite-info'>
