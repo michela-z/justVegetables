@@ -8,8 +8,6 @@ function Card({ title, image, id }) {
     const { removeFromFavorites }  = useContext(FavoritesContext);
     const { items } = useContext(FavoritesContext);
 
-    console.log('in card js', items);
-
     const checkIsAdd = () => {
         if(items.some((val) => val.id === id)) {
             return true;
