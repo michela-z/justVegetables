@@ -4,9 +4,11 @@ import Searchbar from './Searchbar';
 import { useContext } from 'react';
 import FavoritesContext from '../FavoritesContext';
 
-
 function Navbar() {
     const { items } = useContext(FavoritesContext);
+
+    console.log('items merda: ', items);
+    const fav = [items];
 
     return (
         <div className='navbar'>
@@ -18,7 +20,7 @@ function Navbar() {
             </Link>
             <Searchbar />
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favor'>Favorites: <span>{items.length}</span></h4>
+                <h4 className='favor'>Favorites: <span>{fav.length}</span></h4>
             </Link>
         </div>
     )
