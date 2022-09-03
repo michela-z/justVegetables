@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Searchbar from './Searchbar';
 import { useContext } from 'react';
 import FavoritesContext from '../FavoritesContext';
+import logo from '../../public/foglia.png';
 
 function Navbar() {
     const { items } = useContext(FavoritesContext);
@@ -11,7 +12,7 @@ function Navbar() {
         <div className='navbar'>
             <Link to={'/'} style={{ textDecoration: 'none' }}>
                 <div className='logo-container'>
-                    <img src="./foglia.png" alt="logo" className='logo'/>
+                    <img src={logo} alt="logo" className='logo'/>
                     <h3>just<span>vegetables</span></h3>
                 </div>
             </Link>
