@@ -1,7 +1,7 @@
 {
   "name": "projetto-react",
   "version": "0.1.0",
-  "homepage": "https://michela-z.github.io/justVegetables/",
+  "homepage": "https://michela-z.github.io/justVegetables",
   "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
