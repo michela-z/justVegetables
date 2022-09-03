@@ -12,6 +12,7 @@ import { FavoritesProvider } from './FavoritesContext';
 function App() {
   return (
     <FavoritesProvider>
+      <h1>titolo</h1>
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route exact path="/" element={<Home />} />
