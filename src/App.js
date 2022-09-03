@@ -9,6 +9,8 @@ import './App.css';
 
 import { FavoritesProvider } from './FavoritesContext';
 
+console.log('app js works fine');
+
 function App() {
   return (
     <FavoritesProvider>
