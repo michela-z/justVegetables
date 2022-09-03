@@ -11,7 +11,7 @@ function Navbar() {
         <div className='navbar'>
             <Link to={'/'} style={{ textDecoration: 'none' }}>
                 <div className='logo-container'>
-                    <img src="/foglia.png" alt="logo" className='logo'/>
+                    <img src="./foglia.png" alt="logo" className='logo'/>
                     <h3>just<span>vegetables</span></h3>
                 </div>
             </Link>
