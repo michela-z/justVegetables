@@ -8,7 +8,7 @@ const { addToFavorites }  = useContext(FavoritesContext);
 const { removeFromFavorites }  = useContext(FavoritesContext);
 const { items } = useContext(FavoritesContext);
 
-console.log(items);
+console.log('in card js', items);
 
     const checkIsAdd = () => {
         if(items.some((val) => val.id === id)) {

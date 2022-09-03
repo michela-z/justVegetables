@@ -4,9 +4,9 @@ const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
 
-    const saved = [];
+    const [ items, setItems ] = useState([]);
 
-    const [ items, setItems ] = useState(saved);
+    console.log('in favorite context', items);
 
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
