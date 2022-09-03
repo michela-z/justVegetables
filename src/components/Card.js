@@ -4,11 +4,11 @@ import FavoritesContext from '../FavoritesContext';
 
 function Card({ title, image, id }) {
 
-const { addToFavorites }  = useContext(FavoritesContext);
-const { removeFromFavorites }  = useContext(FavoritesContext);
-const { items } = useContext(FavoritesContext);
+    const { addToFavorites }  = useContext(FavoritesContext);
+    const { removeFromFavorites }  = useContext(FavoritesContext);
+    const { items } = useContext(FavoritesContext);
 
-console.log('in card js', items);
+    console.log('in card js', items);
 
     const checkIsAdd = () => {
         if(items.some((val) => val.id === id)) {
