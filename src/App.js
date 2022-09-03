@@ -19,7 +19,7 @@ function App() {
           <Route path="/recipe/:name" element={<Recipe />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
-      </HashRouter   >
+      </HashRouter>
     </FavoritesProvider>
   );
 }

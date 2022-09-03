@@ -48,4 +48,4 @@ function Serched() {
     )
 }
 
-export default Serched
+export default Serched;
