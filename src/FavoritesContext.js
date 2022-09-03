@@ -32,7 +32,7 @@ export function FavoritesProvider({ children }) {
     };
 
     return (
-        <FavoritesContext.Provider value={{ setItems, addToFavorites, removeFromFavorites }}>
+        <FavoritesContext.Provider value={{ items, setItems, addToFavorites, removeFromFavorites }}>
             {children}
         </FavoritesContext.Provider>
     )
