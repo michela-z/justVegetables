@@ -11,8 +11,8 @@ export function FavoritesProvider({ children }) {
         setItems(recipesFavorites);
     }, []);
 
-    const saveToLocalStorage = (items) => {
-        localStorage.setItem('favorites-recipes', JSON.stringify(items))
+    const saveToLocalStorage = (item) => {
+        localStorage.setItem('favorites-recipes', JSON.stringify(item))
     }
 
     const addToFavorites = (title, image, id, favorite) => {
@@ -32,7 +32,7 @@ export function FavoritesProvider({ children }) {
     };
 
     return (
-        <FavoritesContext.Provider value={{ items, setItems, addToFavorites, removeFromFavorites }}>
+        <FavoritesContext.Provider value={{ setItems, addToFavorites, removeFromFavorites }}>
             {children}
         </FavoritesContext.Provider>
     )
