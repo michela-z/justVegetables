@@ -6,8 +6,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 
 function Favorites({ title, image, id }) {
 
-    const { items } = useContext(FavoritesContext);
-    const { setItems } = useContext(FavoritesContext);
+    const { items, setItems } = useContext(FavoritesContext);
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))

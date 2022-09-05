@@ -4,7 +4,7 @@ const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
 
-    const [ items, setItems ] = useState([]);
+    const [ items, setItems ] = useState();
 
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
@@ -17,7 +17,7 @@ export function FavoritesProvider({ children }) {
 
     const addToFavorites = (title, image, id, favorite) => {
         if (!favorite) {
-            const newFavoriteList = [...items, { title, image, id }]
+            const newFavoriteList = [...items, { title, image, id }];
             setItems(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
             console.log('addo to favirite, dentro if');
