@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import FavoritesContext from '../FavoritesContext';
+import cuorePieno from '../../public/cuore-pieno.png'
 
 function Card({ title, image, id }) {
 
@@ -20,7 +21,7 @@ function Card({ title, image, id }) {
 
     const isInFavorites = (id) => {
             return (
-                <img src='../../cuore-pieno.png' alt="like" className='favorite blue' onClick={() => {removeFromFavorites(title, image, id, favorite); toggle()}}/>
+                <img src={cuorePieno} alt="like" className='favorite blue' onClick={() => {removeFromFavorites(title, image, id, favorite); toggle()}}/>
             )
     }
 
