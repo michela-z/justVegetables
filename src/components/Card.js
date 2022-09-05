@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import FavoritesContext from '../FavoritesContext';
-import cuorePieno from '../../public/cuore-pieno.png'
+import cuorePieno from '../../public/cuore-pieno.png';
+import cuoreVuoto from '../../public/cuore-vuoto.png';
 
 function Card({ title, image, id }) {
 
@@ -32,7 +33,7 @@ function Card({ title, image, id }) {
 
     return (
         <div className='card'>
-            {!favorite ? <img src='../../cuore-vuoto.png' alt="like" className='favorite' onClick={() => {addToFavorites(title, image, id, favorite); toggle()}}/> : isInFavorites(id)}
+            {!favorite ? <img src={cuoreVuoto} alt="like" className='favorite' onClick={() => {addToFavorites(title, image, id, favorite); toggle()}}/> : isInFavorites(id)}
             <Link to={'/recipe/' + id}>
                 <img src={image} alt='' className='card-image'/>
                 <div className='card-info-cnt'>
