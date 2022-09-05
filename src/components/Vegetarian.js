@@ -7,7 +7,7 @@ function Vegetarian() {
     const [vegetarian, setVegetarian] = useState([]);
     const [offset, setOffset] = useState(0);
 
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=8612837edd0c4698bf751b0c706cfa8d&number=6&offset=${offset}`;
+    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=8612837edd0c4698bf751b0c706cfa8d&number=2&offset=${offset}`;
 
     const getVegetarian = () => {
 
