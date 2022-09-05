@@ -18,7 +18,7 @@ function Navbar() {
             </Link>
             <Searchbar />
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favor'>Favorites: <span>{items && items.length}</span></h4>
+                <h4 className='favor'>Favorites: <span>{items?.length}</span></h4>
             </Link>
         </div>
     )

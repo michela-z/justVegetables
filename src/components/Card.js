@@ -11,10 +11,8 @@ function Card({ title, image, id }) {
     const { items } = useContext(FavoritesContext);
 
     const checkIsAdd = (id) => {
-        if(items) {
-            if(items.some((val) => val.id === id)) {
-                return true;
-            }
+        if(items.some((val) => val.id === id)) {
+            return true;
         }
     };
     
