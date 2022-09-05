@@ -20,7 +20,9 @@ export function FavoritesProvider({ children }) {
             const newFavoriteList = [...items, { title, image, id }]
             setItems(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
+            console.log('addo to favirite, dentro if');
         };
+        console.log('add to favorite');
     };
 
     const removeFromFavorites = (title, image, id, favorite) => {

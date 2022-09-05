@@ -29,6 +29,7 @@ function Card({ title, image, id }) {
     const toggle = () => {
         isInFavorites(id);
         setFavorite(!favorite);
+        console.log('toggle');
     }
 
     return (
