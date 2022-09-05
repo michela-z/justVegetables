@@ -10,7 +10,7 @@ function Card({ title, image, id }) {
     const { removeFromFavorites }  = useContext(FavoritesContext);
     const { items } = useContext(FavoritesContext);
 
-    const checkIsAdd = () => {
+    const checkIsAdd = (id) => {
         if(items) {
             if(items.some((val) => val.id === id)) {
                 return true;
@@ -18,7 +18,7 @@ function Card({ title, image, id }) {
         }
     };
     
-    const [favorite, setFavorite] = useState(checkIsAdd);
+    const [favorite, setFavorite] = useState(checkIsAdd());
 
     const isInFavorites = (id) => {
             return (
