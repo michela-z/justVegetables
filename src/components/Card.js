@@ -20,7 +20,7 @@ function Card({ title, image, id }) {
 
     const isInFavorites = (id) => {
             return (
-                <img src='../cuore-pieno.png' alt="like" className='favorite blue' onClick={() => {removeFromFavorites(title, image, id, favorite); toggle()}}/>
+                <img src='../../cuore-pieno.png' alt="like" className='favorite blue' onClick={() => {removeFromFavorites(title, image, id, favorite); toggle()}}/>
             )
     }
 
@@ -31,7 +31,7 @@ function Card({ title, image, id }) {
 
     return (
         <div className='card'>
-            {!favorite ? <img src='../cuore-vuoto.png' alt="like" className='favorite' onClick={() => {addToFavorites(title, image, id, favorite); toggle()}}/> : isInFavorites(id)}
+            {!favorite ? <img src='../../cuore-vuoto.png' alt="like" className='favorite' onClick={() => {addToFavorites(title, image, id, favorite); toggle()}}/> : isInFavorites(id)}
             <Link to={'/recipe/' + id}>
                 <img src={image} alt='' className='card-image'/>
                 <div className='card-info-cnt'>
