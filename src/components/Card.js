@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FavoritesContext from '../FavoritesContext';
 import fullHeart from '../../public/cuore-pieno.png';
@@ -10,15 +10,23 @@ function Card({ title, image, id }) {
     const { removeFavorite }  = useContext(FavoritesContext);
     const { favorite } = useContext(FavoritesContext);
 
-    const checkIsAdd = () => {
-        console.log("check")
-        if (favorite.some((val) => val.id === id)) {
-        console.log('checked')
-        return true;
-        };
-    };
+
+    // const checkIsAdd = () => {
+    //     console.log("check")
+    //     if (favorite.some((val) => val.id === id)) {
+    //     console.log('checked')
+    //     return true;
+    //     };
+    // };
+
+    useEffect(() => {
+        const check = favorite.some((item) => item.id === id);
+        if (check) {
+        setHeartIcon(true)
+        }
+    }, [favorite])
     
-    const [ heartIcon, setHeartIcon ] = useState(checkIsAdd);
+    const [ heartIcon, setHeartIcon ] = useState();
 
     const isInFavorites = () => {
             return (

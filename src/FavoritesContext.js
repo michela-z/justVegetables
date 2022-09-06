@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
-    
+
     const [ favorite, setFavorite ] = useState([]);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export function FavoritesProvider({ children }) {
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
     }
-    
+
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
             const newFavoriteList = [...favorite, { title, image, id }];
