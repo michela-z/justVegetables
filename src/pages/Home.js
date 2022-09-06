@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Vegan from '../components/Vegan';
-import Vegetarian from '../components/Vegetarian';
+//import Vegan from '../components/Vegan';
+//import Vegetarian from '../components/Vegetarian';
+import Prova from '../components/Prova';
 
 function Home() {
 
@@ -9,8 +10,9 @@ function Home() {
         <div>
             <Navbar />
             <div className="main-container">
-                <Vegetarian />
-                <Vegan />
+                <Prova />
+                {/* <Vegetarian />
+                <Vegan /> */}
             </div>
         </div>
     )

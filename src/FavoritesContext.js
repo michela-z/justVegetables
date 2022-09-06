@@ -5,21 +5,22 @@ const FavoritesContext = createContext();
 export function FavoritesProvider({ children }) {
 
     const [ items, setItems ] = useState([]);
+    console.log(items)
 
-    useEffect(() => {
-        const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        setItems(recipesFavorites);
-    }, []);
+    // useEffect(() => {
+    //     const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
+    //     setItems(recipesFavorites);
+    // }, []);
 
-    const saveToLocalStorage = (item) => {
-        localStorage.setItem('favorites-recipes', JSON.stringify(item))
-    }
+    // const saveToLocalStorage = (item) => {
+    //     localStorage.setItem('favorites-recipes', JSON.stringify(item))
+    // }
     
     const addToFavorites = (title, image, id, favorite) => {
         if (!favorite) {
             const newFavoriteList = [...items, { title, image, id }];
             setItems(newFavoriteList);
-            saveToLocalStorage(newFavoriteList);
+            //saveToLocalStorage(newFavoriteList);
         };
     };
 
@@ -27,7 +28,7 @@ export function FavoritesProvider({ children }) {
         if (favorite) {
             const newFavoriteList = items?.filter((fav) => fav.id !== id);
             setItems(newFavoriteList);
-            saveToLocalStorage(newFavoriteList);
+            //saveToLocalStorage(newFavoriteList);
         };
     };
 
