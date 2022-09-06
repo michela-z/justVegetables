@@ -10,21 +10,12 @@ function Card({ title, image, id }) {
     const { removeFavorite }  = useContext(FavoritesContext);
     const { favorite } = useContext(FavoritesContext);
 
-
-    // const checkIsAdd = () => {
-    //     console.log("check")
-    //     if (favorite.some((val) => val.id === id)) {
-    //     console.log('checked')
-    //     return true;
-    //     };
-    // };
-
-    useEffect(() => {
-        const check = favorite.some((item) => item.id === id);
-        if (check) {
-        setHeartIcon(true)
-        }
-    }, [favorite])
+    // useEffect(() => {
+    //     const check = favorite.some((item) => item.id === id);
+    //     if (check) {
+    //     setHeartIcon(true)
+    //     }
+    // }, [favorite])
     
     const [ heartIcon, setHeartIcon ] = useState();
 
