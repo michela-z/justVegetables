@@ -15,14 +15,14 @@ function Serched() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params]);
 
-    const getSearched = (name) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c&number=8&offset=${offset}`)
-        .then((response) => {
-            console.log(response.data.results);  
-            setSearched(response.data.results);
-        })
-        .catch(error => console.log(error))
-    }
+    // const getSearched = (name) => {
+    //     axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c&number=8&offset=${offset}`)
+    //     .then((response) => {
+    //         console.log(response.data.results);  
+    //         setSearched(response.data.results);
+    //     })
+    //     .catch(error => console.log(error))
+    // }
 
     function increaseNumber() {
         setOffset(prevNumber => prevNumber + 5)

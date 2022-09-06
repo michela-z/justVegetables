@@ -6,15 +6,15 @@ import { BsFillTrashFill } from 'react-icons/bs';
 
 function Favorites({ title, image, id }) {
 
-    const { items, setItems } = useContext(FavoritesContext);
+    const { favorite, setFavorite } = useContext(FavoritesContext);
 
     const saveToLocalStorage = (fav) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(fav))
     }
 
     const removeFavorite = (id) => {
-        const newFavoriteList = items.filter((item) => item.id !== id);
-        setItems(newFavoriteList);
+        const newFavoriteList = favorite.filter((item) => item.id !== id);
+        setFavorite(newFavoriteList);
         saveToLocalStorage(newFavoriteList);
     }
 
@@ -24,7 +24,7 @@ function Favorites({ title, image, id }) {
             <div className='main-container'>
                 <h2>Favorites</h2>
                 <div className='favorites-cnt'>
-                    {items.map((item) => (
+                    {favorite.map((item) => (
                     <div key={item.id}>
                         <div className='favorite-page'>
                             <div className='favorite-info'>

@@ -6,33 +6,34 @@ import emptyHeart from '../../public/cuore-vuoto.png';
 
 function Card({ title, image, id }) {
 
-    const { addToFavorites }  = useContext(FavoritesContext);
-    const { removeFromFavorites }  = useContext(FavoritesContext);
-    const { items } = useContext(FavoritesContext);
+    const { addFavorite }  = useContext(FavoritesContext);
+    const { removeFavorite }  = useContext(FavoritesContext);
+    const { favorite } = useContext(FavoritesContext);
 
-    const checkIsAdd = (id) => {
-        if(items.some((val) => val.id === id)) {
-            return true;
-        }
+    const checkIsAdd = () => {
+        console.log("check")
+        if (favorite.some((val) => val.id === id)) {
+        console.log('checked')
+        return true;
+        };
     };
     
-    const [favorite, setFavorite] = useState(checkIsAdd);
+    const [ heartIcon, setHeartIcon ] = useState(checkIsAdd);
 
-    const isInFavorites = (id) => {
+    const isInFavorites = () => {
             return (
-                <img src={fullHeart} alt="like" className='favorite blue' onClick={() => {removeFromFavorites(title, image, id, favorite); toggle()}}/>
+                <img src={fullHeart} alt="like" className='favorite blue' onClick={() => {removeFavorite(title, image, id, heartIcon); toggle()}}/>
             )
     }
 
     const toggle = () => {
-        isInFavorites(id);
-        setFavorite(!favorite);
-        console.log('toggle');
+        isInFavorites();
+        setHeartIcon(!heartIcon);
     }
 
     return (
         <div className='card'>
-            {!favorite ? <img src={emptyHeart} alt="like" className='favorite' onClick={() => {addToFavorites(title, image, id, favorite); toggle()}}/> : isInFavorites(id)}
+            {!heartIcon ? <img src={emptyHeart} alt="like" className='favorite' onClick={() => {addFavorite(title, image, id, heartIcon); toggle()}}/> : isInFavorites()}
             <Link to={'/recipe/' + id}>
                 <img src={image} alt='' className='card-image'/>
                 <div className='card-info-cnt'>

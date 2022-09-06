@@ -6,7 +6,7 @@ import FavoritesContext from '../FavoritesContext';
 import logo from '../../public/foglia.png';
 
 function Navbar() {
-    const { items } = useContext(FavoritesContext);
+    const { favorite } = useContext(FavoritesContext);
 
     return (
         <div className='navbar'>
@@ -18,7 +18,7 @@ function Navbar() {
             </Link>
             <Searchbar />
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favor'>Favorites: <span>{items?.length}</span></h4>
+                <h4 className='favor'>Favorites: <span>{favorite.length}</span></h4>
             </Link>
         </div>
     )

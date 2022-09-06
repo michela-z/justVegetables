@@ -3,37 +3,36 @@ import React, { createContext, useState, useEffect } from "react";
 const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
-
-    const [ items, setItems ] = useState([]);
-    console.log(items)
-
-    // useEffect(() => {
-    //     const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-    //     setItems(recipesFavorites);
-    // }, []);
-
-    // const saveToLocalStorage = (item) => {
-    //     localStorage.setItem('favorites-recipes', JSON.stringify(item))
-    // }
     
-    const addToFavorites = (title, image, id, favorite) => {
-        if (!favorite) {
-            const newFavoriteList = [...items, { title, image, id }];
-            setItems(newFavoriteList);
-            //saveToLocalStorage(newFavoriteList);
+    const [ favorite, setFavorite ] = useState([]);
+
+    useEffect(() => {
+        const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
+        setFavorite(recipesFavorites);
+    }, []);
+
+    const saveToLocalStorage = (items) => {
+        localStorage.setItem('favorites-recipes', JSON.stringify(items))
+    }
+    
+    const addFavorite = (title, image, id, heartIcon) => {
+        if (!heartIcon) {
+            const newFavoriteList = [...favorite, { title, image, id }];
+            setFavorite(newFavoriteList);
+            saveToLocalStorage(newFavoriteList);
         };
     };
 
-    const removeFromFavorites = (title, image, id, favorite) => {
-        if (favorite) {
-            const newFavoriteList = items?.filter((fav) => fav.id !== id);
-            setItems(newFavoriteList);
-            //saveToLocalStorage(newFavoriteList);
+    const removeFavorite = (title, image, id, heartIcon) => {
+        if (heartIcon) {
+            const newFavoriteList = favorite.filter((fav) => fav.id !== id);
+            setFavorite(newFavoriteList);
+            saveToLocalStorage(newFavoriteList);
         };
     };
 
     return (
-        <FavoritesContext.Provider value={{ items, setItems, addToFavorites, removeFromFavorites }}>
+        <FavoritesContext.Provider value={{ favorite, setFavorite, addFavorite, removeFavorite }}>
             {children}
         </FavoritesContext.Provider>
     )
