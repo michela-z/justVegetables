@@ -27,7 +27,7 @@ Nel terminale eseguire:
 - Bundler: webpack.
 
 ## LINK al progetto
- Prova il progetto qui: [https://hackernewssite-bymz.netlify.app](https://   .netlify.app)
+ Prova il progetto qui: [https:// .netlify.app](https:// .netlify.app)
    ~   GitHub Repository: [https://github.com/michela-z/justVegetables](https://github.com/michela-z/justVegetables) 
 
 
