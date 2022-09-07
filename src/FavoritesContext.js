@@ -8,7 +8,7 @@ export function FavoritesProvider({ children }) {
 
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        setFavorite(prev => [...prev, recipesFavorites]);
+        setFavorite(recipesFavorites);
     }, []);
 
     const saveToLocalStorage = (items) => {
