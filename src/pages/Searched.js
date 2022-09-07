@@ -16,9 +16,8 @@ function Serched() {
     }, [params]);
 
     const getSearched = (name) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c&number=4&offset=${offset}`)
+        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c&offset=${offset}`)
         .then((response) => {
-            console.log(response.data.results);  
             setSearched(response.data.results);
         })
         .catch(error => console.log(error))
