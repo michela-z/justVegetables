@@ -6,10 +6,10 @@ export function FavoritesProvider({ children }) {
 
     const [ favorite, setFavorite ] = useState();
 
-    useEffect(() => {
-        //const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        setFavorite(JSON.parse(localStorage.getItem('favorites-recipes')));
-    }, []);
+    // useEffect(() => {
+    //     //const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
+    //     setFavorite(JSON.parse(localStorage.getItem('favorites-recipes')));
+    // }, []);
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
