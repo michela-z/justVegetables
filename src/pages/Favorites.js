@@ -12,11 +12,11 @@ function Favorites({ title, image, id }) {
     //     localStorage.setItem('favorites-recipes', JSON.stringify(fav))
     // }
 
-    // const removeFavorite = (id) => {
-    //     const newFavoriteList = favorite.filter((item) => item.id !== id);
-    //     setFavorite(newFavoriteList);
-    //     saveToLocalStorage(newFavoriteList);
-    // }
+    const removeFavorite = (id) => {
+        const newFavoriteList = favorite.filter((item) => item.id !== id);
+        setFavorite(newFavoriteList);
+        // saveToLocalStorage(newFavoriteList);
+    }
 
     return (
         <div>
