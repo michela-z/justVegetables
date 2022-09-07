@@ -7,7 +7,6 @@ import Navbar from '../components/Navbar';
 function Serched() {
     
     const [searched, setSearched] = useState([]);
-    const [offset, setOffset] = useState(0);
     let params = useParams();
 
     useEffect(() => {
@@ -16,15 +15,11 @@ function Serched() {
     }, [params]);
 
     const getSearched = (name) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c&offset=${offset}`)
+        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=25aac33bb9444acca929b779adace82c`)
         .then((response) => {
             setSearched(response.data.results);
         })
         .catch(error => console.log(error))
-    }
-
-    function increaseNumber() {
-        setOffset(prevNumber => prevNumber + 5)
     }
 
     return (
@@ -33,7 +28,6 @@ function Serched() {
             <div className='main-container searched-cnt'>
                 <div className='searched-title'>
                     <h2>{params.search} recipes</h2>
-                    <button className="button" onClick={increaseNumber}>Load More</button>
                 </div>
                 <div className='searched'>
                     {searched.map((item) => {
