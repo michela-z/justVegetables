@@ -10,14 +10,14 @@ function Recipe() {
     const [details, setDetails] = useState({});
     const [isLoading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     axios.get(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=25aac33bb9444acca929b779adace82c`)
-    //     .then((response) => {
-    //         setDetails(response.data);
-    //         setLoading(false)
-    //     })
-    //     .catch(error => console.log(error))
-    // }, [params.name]);
+    useEffect(() => {
+        axios.get(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=25aac33bb9444acca929b779adace82c`)
+        .then((response) => {
+            setDetails(response.data);
+            setLoading(false)
+        })
+        .catch(error => console.log(error))
+    }, [params.name]);
 
     let diet; 
     if (details.vegan) {
