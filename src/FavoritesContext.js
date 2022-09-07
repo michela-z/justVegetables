@@ -6,20 +6,20 @@ export function FavoritesProvider({ children }) {
 
     const [ favorite, setFavorite ] = useState([]);
 
-    useEffect(() => {
-        const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        setFavorite(recipesFavorites);
-    }, []);
+    // useEffect(() => {
+    //     const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
+    //     setFavorite(recipesFavorites);
+    // }, []);
 
-    const saveToLocalStorage = (items) => {
-        localStorage.setItem('favorites-recipes', JSON.stringify(items))
-    }
+    // const saveToLocalStorage = (items) => {
+    //     localStorage.setItem('favorites-recipes', JSON.stringify(items))
+    // }
 
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
             const newFavoriteList = [...favorite, { title, image, id }];
             setFavorite(newFavoriteList);
-            saveToLocalStorage(newFavoriteList);
+            //saveToLocalStorage(newFavoriteList);
         };
     };
 
@@ -27,7 +27,7 @@ export function FavoritesProvider({ children }) {
         if (heartIcon) {
             const newFavoriteList = favorite.filter((fav) => fav.id !== id);
             setFavorite(newFavoriteList);
-            saveToLocalStorage(newFavoriteList);
+            //saveToLocalStorage(newFavoriteList);
         };
     };
 
