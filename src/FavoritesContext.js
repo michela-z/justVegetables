@@ -11,15 +11,15 @@ export function FavoritesProvider({ children }) {
     //     setFavorite(recipesFavorites);
     // }, []);
 
-    // const saveToLocalStorage = (items) => {
-    //     localStorage.setItem('favorites-recipes', JSON.stringify(items))
-    // }
+    const saveToLocalStorage = (items) => {
+        localStorage.setItem('favorites-recipes', JSON.stringify(items))
+    }
 
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
             const newFavoriteList = [...favorite, { title, image, id }];
             setFavorite(newFavoriteList);
-            //saveToLocalStorage(newFavoriteList);
+            saveToLocalStorage(newFavoriteList);
         };
     };
 
