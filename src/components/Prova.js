@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import data from '../../data';
 
-function Vegetarian() {
+function Prova() {
 
     return (
         <div className='vegetarian' >
@@ -18,4 +18,4 @@ function Vegetarian() {
     )
 }
 
-export default Vegetarian;
+export default Prova;
