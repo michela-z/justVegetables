@@ -8,15 +8,15 @@ function Favorites({ title, image, id }) {
 
     const { favorite, setFavorite } = useContext(FavoritesContext);
 
-    const saveToLocalStorage = (fav) => {
-        localStorage.setItem('favorites-recipes', JSON.stringify(fav))
-    }
+    // const saveToLocalStorage = (fav) => {
+    //     localStorage.setItem('favorites-recipes', JSON.stringify(fav))
+    // }
 
-    const removeFavorite = (id) => {
-        const newFavoriteList = favorite.filter((item) => item.id !== id);
-        setFavorite(newFavoriteList);
-        saveToLocalStorage(newFavoriteList);
-    }
+    // const removeFavorite = (id) => {
+    //     const newFavoriteList = favorite.filter((item) => item.id !== id);
+    //     setFavorite(newFavoriteList);
+    //     saveToLocalStorage(newFavoriteList);
+    // }
 
     return (
         <div>
