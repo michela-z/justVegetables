@@ -14,9 +14,8 @@ export function FavoritesProvider({ children }) {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
         if (favorite.length !== 0) {
             setFavorite(recipesFavorites);
-            console.log('esiste')
+            console.log(favorite)
         } else {
-            console.log('non esiste')
             setFavorite(recipesFavorites);
         }
     }, []);
