@@ -19,7 +19,7 @@ export function FavoritesProvider({ children }) {
             console.log('non esiste')
             localStorage.setItem('favorites-recipes', JSON.stringify(favorite));
         }
-    }, [favorite]);
+    }, []);
 
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
