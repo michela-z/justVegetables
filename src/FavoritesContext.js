@@ -12,12 +12,14 @@ export function FavoritesProvider({ children }) {
 
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        if (favorite.length !== 0) {
+        if (favorite) {
+            console.log('esiste')
             setFavorite(recipesFavorites);
         } else {
-            setFavorite(recipesFavorites);
+            console.log('non esiste')
+            localStorage.setItem('favorites-recipes', JSON.stringify(favorite));
         }
-    }, []);
+    }, [favorite]);
 
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
