@@ -11,7 +11,7 @@ function Recipe() {
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=4396840b109d4699afe6f0788f2ed9ff`)
         .then((response) => {
             setDetails(response.data);
             setLoading(false)

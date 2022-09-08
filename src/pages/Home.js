@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Vegan from '../components/Vegan';
 import Vegetarian from '../components/Vegetarian';
 
-
 function Home() {
 
     return (
