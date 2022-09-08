@@ -7,7 +7,6 @@
 }
 
 body {
-    /* border: blue solid 1px; */
     font-family: 'Montserrat';
     font-weight: 200;
 }
@@ -59,7 +58,6 @@ span {
 }
 
 .main-container {
-    /* border: red solid 1px; */
     margin: 80px auto;
     width: 80%;
     max-width: 1200px;
@@ -76,7 +74,6 @@ h2 {
 }
 
 .vegetarian, .vegan {
-    /* border: #00CC76 solid 2px; */
     width: 100%;
     height: 320px;
     display: flex;
@@ -87,7 +84,6 @@ h2 {
 }
 
 .searched {
-    /* border: #00CC76 solid 2px; */
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -96,17 +92,14 @@ h2 {
 }
 
 .card-container {
-    /* border: solid 1px blue; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* align-items: flex-end; */
     overflow: auto;
     white-space: nowrap;
 }
 
 .card {
-    /* border: red solid 1px; */
     border-radius: 15px;
     width: 220px;
     height: 240px;
@@ -149,11 +142,9 @@ h2 {
     border-radius: 15px;
     position: absolute;
     width: 90%;
-    /* height: 50px; */
     bottom: 4%;
     left: 5%;
     color: white;
-    /* font-weight: bold; */
 
     padding: 10px;
     display: flex;
@@ -162,7 +153,6 @@ h2 {
 }
 
 .card-info-cnt p {
-    /* border: solid 1px red; */
     width: 100%;
     white-space: normal;
 }
@@ -181,10 +171,8 @@ h2 {
 }
 
 .search-container {
-    /* border: solid red 1px; */
     background: white;
     border-radius: 10px;
-    /* border: none; */
     width: 150px;
     padding: 0 10px;
     display: flex;
@@ -192,7 +180,6 @@ h2 {
 }
 
 .search {
-    /* border: solid green 1px; */
     background: transparent;
     border: none;
     width: 100px;
@@ -203,7 +190,6 @@ h2 {
 }
 
 .cerca {
-    /* border: solid blue 1px; */
     width: 20px;
     height: 90%;
     color: #23B791;
@@ -368,7 +354,6 @@ h2 {
 /* FAVORITE PAGE  */
 
 .favorite-page {
-    /* border: solid black 1px; */
     width: 500px;
     height: 90px;
     border-radius: 20px;
@@ -382,16 +367,13 @@ h2 {
 .favorites-cnt {
     margin-top: 50px;
     height: 100%;
-    /* border: solid black 1px; */
     display: flex;
     flex-direction: column;
 }
 
 .favorite-image {
-    /* width: 100%; */
     height: 100%;
     border-radius: 20px;
-    /*  object-fit: cover; */
 }
 
 .favorite-info {
@@ -451,7 +433,6 @@ h2 {
 
 @media only screen and (max-width: 920px) {
     .main-container {
-        /* background: #00cc777d; */
         height: auto;
         margin-top: 30px;
     }
