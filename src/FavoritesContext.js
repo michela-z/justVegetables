@@ -6,16 +6,17 @@ export function FavoritesProvider({ children }) {
 
     const [ favorite, setFavorite ] = useState([]);
 
+    function saveToLocalStorage(items) {
+        localStorage.setItem('favorites-recipes', JSON.stringify(items));
+    }
+
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
         if (favorite) {
             setFavorite(recipesFavorites);
-        }
+            console.log('esiste')
+        } else console.log('NON ESISTE')
     }, []);
-
-    function saveToLocalStorage(items) {
-        localStorage.setItem('favorites-recipes', JSON.stringify(items));
-    }
 
     const addFavorite = (title, image, id, heartIcon) => {
         if (!heartIcon) {
