@@ -15,7 +15,10 @@ export function FavoritesProvider({ children }) {
         if (favorite.length !== 0) {
             setFavorite(recipesFavorites);
             console.log('esiste')
-        } else console.log('NON ESISTE')
+        } else {
+            console.log('non esiste')
+            setFavorite(recipesFavorites);
+        }
     }, []);
 
     const addFavorite = (title, image, id, heartIcon) => {
