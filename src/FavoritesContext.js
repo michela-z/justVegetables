@@ -12,7 +12,7 @@ export function FavoritesProvider({ children }) {
 
     useEffect(() => {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
-        if (favorite) {
+        if (recipesFavorites) {
             console.log('esiste')
             setFavorite(recipesFavorites);
         } else {
