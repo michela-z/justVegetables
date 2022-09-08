@@ -7,7 +7,7 @@ function Vegetarian() {
     const [vegetarian, setVegetarian] = useState([]);
     const [offset, setOffset] = useState(0);
 
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=9547a05f38b94e7098b26ab63cd24f9d&number=6&offset=${offset}`;
+    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=${process.env.REACT_APP_API_KEY}&number=6&offset=${offset}`;
 
     const getVegetarian = () => {
         axios.get(baseURL)
