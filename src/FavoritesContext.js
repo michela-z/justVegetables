@@ -19,15 +19,15 @@ export function FavoritesProvider({ children }) {
         }
     }, []);
 
-    const addFavorite = (title, image, id, heartIcon) => {
+    const addFavorite = (id, heartIcon) => {
         if (!heartIcon) {
-            const newFavoriteList = [...favorite, { title, image, id }];
+            const newFavoriteList = favorite.concat(id);
             setFavorite(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
         };
     };
 
-    const removeFavorite = (title, image, id, heartIcon) => {
+    const removeFavorite = (id, heartIcon) => {
         if (heartIcon) {
             const newFavoriteList = favorite.filter((fav) => fav.id !== id);
             setFavorite(newFavoriteList);
