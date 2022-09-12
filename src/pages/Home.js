@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Vegan from '../components/Vegan';
-import Vegetarian from '../components/Vegetarian';
+import Navbar from '../components/Navbar/Navbar';
+import Vegan from '../components/Vegan/Vegan';
+import Vegetarian from '../components/Vegetarian/Vegetarian';
 
 function Home() {
 

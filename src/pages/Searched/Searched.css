@@ -1,0 +1,21 @@
+.searched {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.searched-cnt {
+    max-width: 1000px;
+}
+
+.searched-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.searched-title button {
+    position: relative;
+}

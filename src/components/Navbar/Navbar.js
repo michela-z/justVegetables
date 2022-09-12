@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Searchbar from './Searchbar';
+import Searchbar from '../Searchbar/Searchbar';
 import { useContext } from 'react';
-import FavoritesContext from '../FavoritesContext';
-import logo from '../../public/foglia.png';
+import FavoritesContext from '../../FavoritesContext';
+import logo from '../../assets/foglia.png';
+import './Navbar.css';
 
 function Navbar() {
 

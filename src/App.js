@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from './pages/Home';
-import Searched from './pages/Searched';
-import Recipe from './pages/Recipe';
-import Favorites from './pages/Favorites';
+import Searched from './pages/Searched/Searched';
+import Recipe from './pages/Recipe/Recipe';
+import Favorites from './pages/Favorites/Favorites';
 
 import './App.css';
 

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import Card from '../components/Card';
-import Navbar from '../components/Navbar';
+import Card from '../../components/Card/Card';
+import Navbar from '../../components/Navbar/Navbar';
+import './Searched.css';
 
 function Serched() {
     

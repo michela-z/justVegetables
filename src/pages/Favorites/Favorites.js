@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import FavoritesContext from '../FavoritesContext';
+import React, { useContext } from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import FavoritesContext from '../../FavoritesContext';
 import { Link } from 'react-router-dom';
 import { BsFillTrashFill } from 'react-icons/bs';
+import './Favorites.css';
 
 function Favorites({ title, image, id }) {
 

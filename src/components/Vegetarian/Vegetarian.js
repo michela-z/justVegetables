@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Card';
+import Card from '../Card/Card';
+import './Vegetarian.css';
 
-function Vegan() {
+function Vegetarian() {
 
-    const [vegan, setVegan] = useState([]);
+    const [vegetarian, setVegetarian] = useState([]);
     const [offset, setOffset] = useState(0);
 
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegan&apiKey=4396840b109d4699afe6f0788f2ed9ff&number=6&offset=${offset}`;
+    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=4396840b109d4699afe6f0788f2ed9ff&number=1&offset=${offset}`;
 
-    const getVegan = () => {
+    const getVegetarian = () => {
         axios.get(baseURL)
         .then((response) => {
-            setVegan(response.data.results);
+            setVegetarian(response.data.results);
         })
         .catch(error => console.log(error))
     }
@@ -22,16 +23,16 @@ function Vegan() {
     }
 
     useEffect(() => {
-        getVegan();
+        getVegetarian();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [offset]);
 
     return (
-        <div className='vegan' >
-            <h2>Vegan Recipes</h2>
+        <div className='vegetarian' >
+            <h2>Vegetarian Recipes</h2>
             <button className="button" onClick={increaseNumber}>Load More</button>
-            <div className='card-container'>
-            {vegan.map(recipe => (
+            <div className='card-container' key={vegetarian.id}>
+            {vegetarian.map(recipe => (
                 <div key={recipe.id}>
                         <Card title={recipe.title} image={recipe.image} id={recipe.id}/>
                 </div>
@@ -41,4 +42,4 @@ function Vegan() {
     )
 }
 
-export default Vegan
+export default Vegetarian;

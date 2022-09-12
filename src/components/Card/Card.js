@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import FavoritesContext from '../FavoritesContext';
-import fullHeart from '../../public/cuore-pieno.png';
-import emptyHeart from '../../public/cuore-vuoto.png';
+import FavoritesContext from '../../FavoritesContext';
+import fullHeart from '../../assets/cuore-pieno.png';
+import emptyHeart from '../../assets/cuore-vuoto.png';
+import './Card.css';
 
 function Card({ title, image, id }) {
 
