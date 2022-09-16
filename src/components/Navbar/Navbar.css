@@ -6,6 +6,9 @@
     display: flex;
     align-items: center;
     padding: 0 10%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .favor {

@@ -22,7 +22,7 @@ function Navbar() {
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
                 <h4 className='favor'>Favorites: <span>{favorite.length}</span></h4>
             </Link>
-        </div>
+            </div>
     )
 } 
 

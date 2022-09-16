@@ -1,40 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import './Vegetarian.css';
+import { getRecipes } from "../../api";
+
+
+//import data from '../../data';
 
 function Vegetarian() {
 
-    const [vegetarian, setVegetarian] = useState([]);
+    const [recipes, setRecipes] = useState([]);
     const [offset, setOffset] = useState(0);
 
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=4396840b109d4699afe6f0788f2ed9ff&number=1&offset=${offset}`;
-
-    const getVegetarian = () => {
-        axios.get(baseURL)
-        .then((response) => {
-            setVegetarian(response.data.results);
-        })
-        .catch(error => console.log(error))
-    }
-
-    function increaseNumber() {
-        setOffset(prevNumber => prevNumber + 5)
-    }
+    const urlParams = 'vegetarian';
+    
+    // //const URL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=d2c828e2a18c4b53871971851c1f1a77&number=1`;
 
     useEffect(() => {
-        getVegetarian();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [offset]);
-
+        getRecipes(urlParams, offset)
+            .then((response) => {
+                setRecipes(response.data.results);
+            })
+    },[offset])
+    
     return (
         <div className='vegetarian' >
             <h2>Vegetarian Recipes</h2>
-            <button className="button" onClick={increaseNumber}>Load More</button>
-            <div className='card-container' key={vegetarian.id}>
-            {vegetarian.map(recipe => (
+            <button className="button" onClick={() => setOffset((prev) => prev + 1)}>Load More</button>
+            <div className='card-container'>
+            {recipes.map((recipe) => (
                 <div key={recipe.id}>
-                        <Card title={recipe.title} image={recipe.image} id={recipe.id}/>
+                    <Card title={recipe.title} image={recipe.image} id={recipe.id} recipes={recipes}/>
                 </div>
             ))}
             </div>

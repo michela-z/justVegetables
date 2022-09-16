@@ -52,3 +52,8 @@
 .favorite-trash:hover {
     background: #a6ffda;
 }
+
+.sub-title {
+    color: #00cc77ba;
+    margin-bottom: 20px;
+}

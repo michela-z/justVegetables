@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card/Card';
-import data from '../../data';
+import data from '../data';
 
-function Vegetarian() {
+function Prova() {
 
     return (
         <div>
@@ -18,4 +18,4 @@ function Vegetarian() {
     )
 }
 
-export default Vegetarian;
+export default Prova;

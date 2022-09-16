@@ -42,7 +42,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './public/index.html',
         }),
         new webpack.ProvidePlugin({
             process: 'process/browser',
@@ -56,5 +56,5 @@ module.exports = {
     },
     optimization: {
         runtimeChunk: 'single',
-    },
+    }
 };

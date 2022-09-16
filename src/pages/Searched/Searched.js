@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import Navbar from '../../components/Navbar/Navbar';
+import { getRecipes } from "../../api";
 import './Searched.css';
 
 function Serched() {
     
     const [searched, setSearched] = useState([]);
+    const [offset, setOffset] = useState(0);
     let params = useParams();
 
-    useEffect(() => {
-        getSearched(params.search);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [params]);
+    let urlParams = params.search;
 
-    const getSearched = (name) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${name}&diet=vegetarian&apiKey=4396840b109d4699afe6f0788f2ed9ff`)
-        .then((response) => {
-            setSearched(response.data.results);
-        })
-        .catch(error => console.log(error))
-    }
+    //const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${params.search}&diet=vegetarian&apiKey=d2c828e2a18c4b53871971851c1f1a77`;
+
+    useEffect(() => {
+        getRecipes(urlParams, offset)
+            .then((response) => {
+                setSearched(response.data.results);
+            })
+    },[params, offset])
 
     return (
         <div>
@@ -29,6 +28,7 @@ function Serched() {
             <div className='main-container searched-cnt'>
                 <div className='searched-title'>
                     <h2>{params.search} recipes</h2>
+                    <button className="button" onClick={() => {setOffset((prev) => prev + 1)}}>Load More</button>
                 </div>
                 <div className='searched'>
                     {searched.map((item) => {

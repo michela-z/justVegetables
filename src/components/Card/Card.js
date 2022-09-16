@@ -10,19 +10,18 @@ function Card({ title, image, id }) {
     const { addFavorite }  = useContext(FavoritesContext);
     const { removeFavorite }  = useContext(FavoritesContext);
     const { favorite } = useContext(FavoritesContext);
+    const [heartIcon, setHeartIcon] = useState();
 
     useEffect(() => {
-        const check = favorite.some((item) => item.id === id);
+        const check = favorite.includes(id);
         if (check) {
         setHeartIcon(true)
         }
     }, [favorite])
-    
-    const [ heartIcon, setHeartIcon ] = useState();
 
     const isInFavorites = () => {
             return (
-                <img src={fullHeart} alt="like" className='favorite blue' onClick={() => {removeFavorite(title, image, id, heartIcon); toggle()}}/>
+                <img src={fullHeart} alt="like" className='favorite blue' onClick={() => {removeFavorite(id, heartIcon); toggle()}}/>
             )
     }
 
@@ -32,8 +31,8 @@ function Card({ title, image, id }) {
     }
 
     return (
-        <div className='card'>
-            {!heartIcon ? <img src={emptyHeart} alt="like" className='favorite' onClick={() => {addFavorite(title, image, id, heartIcon); toggle()}}/> : isInFavorites()}
+        <div className='card' key={id}>
+            {!heartIcon ? <img src={emptyHeart} alt="<3" className='favorite' onClick={() => {addFavorite(id, heartIcon); toggle()}}/> : isInFavorites()}
             <Link to={'/recipe/' + id}>
                 <img src={image} alt='' className='card-image'/>
                 <div className='card-info-cnt'>

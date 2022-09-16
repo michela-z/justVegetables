@@ -14,14 +14,13 @@ export function FavoritesProvider({ children }) {
         const recipesFavorites = JSON.parse(localStorage.getItem('favorites-recipes'));
         if (recipesFavorites) {
             setFavorite(recipesFavorites);
-        } else {
-            localStorage.setItem('favorites-recipes', JSON.stringify(favorite));
         }
     }, []);
 
     const addFavorite = (id, heartIcon) => {
         if (!heartIcon) {
             const newFavoriteList = favorite.concat(id);
+            console.log(newFavoriteList);
             setFavorite(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
         };
@@ -29,7 +28,9 @@ export function FavoritesProvider({ children }) {
 
     const removeFavorite = (id, heartIcon) => {
         if (heartIcon) {
-            const newFavoriteList = favorite.filter((fav) => fav.id !== id);
+            // let index = favorite.indexOf(id);
+            // const newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)]
+            const newFavoriteList = favorite.filter((item) => item.id !== id);
             setFavorite(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
         };

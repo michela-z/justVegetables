@@ -2,23 +2,23 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import  Navbar from '../../components/Navbar/Navbar';
-import axios from 'axios';
+//import { getRecipeInfo } from "../../api";
 import './Recipe.css';
 
 function Recipe() {
 
     let params = useParams();
+    let searchValue = params.name;
     const [details, setDetails] = useState({});
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=4396840b109d4699afe6f0788f2ed9ff`)
+        getRecipeInfo(searchValue)
         .then((response) => {
             setDetails(response.data);
             setLoading(false)
         })
-        .catch(error => console.log(error))
-    }, [params.name]);
+    }, [searchValue]);
 
     let diet; 
     if (details.vegan) {
