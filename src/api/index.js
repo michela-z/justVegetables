@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//const apiKey = 'd2c828e2a18c4b53871971851c1f1a77'; 
+const apiKey = 'bae280b35a1446a3bff14d2c197a7db4'; 
 
 export const getRecipes = async (param, offset) => {
     try {
