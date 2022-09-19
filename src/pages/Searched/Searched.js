@@ -2,25 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import Navbar from '../../components/Navbar/Navbar';
-import { getRecipes } from "../../api";
+import { getAllRecipes } from "../../api";
 import './Searched.css';
 
 function Serched() {
     
     const [searched, setSearched] = useState([]);
-    const [offset, setOffset] = useState(0);
     let params = useParams();
 
-    let urlParams = params.search;
-
-    //const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${params.search}&diet=vegetarian&apiKey=d2c828e2a18c4b53871971851c1f1a77`;
-
     useEffect(() => {
-        getRecipes(urlParams, offset)
+        getAllRecipes(params.search)
             .then((response) => {
                 setSearched(response.data.results);
             })
-    },[params, offset])
+    },[params]);
 
     return (
         <div>
@@ -28,7 +23,7 @@ function Serched() {
             <div className='main-container searched-cnt'>
                 <div className='searched-title'>
                     <h2>{params.search} recipes</h2>
-                    <button className="button" onClick={() => {setOffset((prev) => prev + 1)}}>Load More</button>
+                    {/* <button className="button" onClick={() => {setOffset((prev) => prev + 1)}}>Load More</button> */}
                 </div>
                 <div className='searched'>
                     {searched.map((item) => {

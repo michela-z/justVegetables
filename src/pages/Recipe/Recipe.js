@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import  Navbar from '../../components/Navbar/Navbar';
-//import { getRecipeInfo } from "../../api";
+import { getRecipeInfo } from "../../api";
 import './Recipe.css';
 
 function Recipe() {

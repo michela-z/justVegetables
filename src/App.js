@@ -7,13 +7,11 @@ import Favorites from './pages/Favorites/Favorites';
 import './App.css';
 
 import { FavoritesProvider } from './FavoritesContext';
-import { GetRecipeProvider } from './GetRecipeContext';
 
 function App() {
 
   return (
     <FavoritesProvider>
-      <GetRecipeProvider>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -22,7 +20,6 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </BrowserRouter>
-      </GetRecipeProvider>
     </FavoritesProvider>
   );
 }
