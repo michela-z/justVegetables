@@ -4,44 +4,57 @@ import FavoritesContext from '../../FavoritesContext';
 import { Link } from 'react-router-dom';
 import { BsFillTrashFill } from 'react-icons/bs';
 import './Favorites.css';
-import { getAllRecipes, getRecipeInfo } from '../../api';
+import { getRecipeInfo } from '../../api';
 
 function Favorites() {
 
-    let newrecipe = [];
-
     const { favorite, setFavorite } = useContext(FavoritesContext);
     const [recipes, setRecipes] = useState([]);
+    const [newrec, setNewrec] = useState([]);
 
     const getRecipe = () => {
-        if(favorite.length !== recipes.length) {
-            for (let i = 0; i < favorite.length; i++) {
-                const element = favorite[i];
-                getRecipeInfo(element)
-                .then((response) => {
-                    let title = response.data.title;
-                    let image = response.data.image;
-                    let id = response.data.id;
-                    setRecipes(prev => [...prev, {id: id, title: title, image: image}])
-                })
-                .catch((error) => console.log(error))
-            }
+        for (let i = 0; i < favorite.length; i++) {
+            const element = favorite[i];
+            getRecipeInfo(element)
+            .then((response) => {
+                let title = response.data.title;
+                let image = response.data.image;
+                let id = response.data.id;
+                setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+            })
+            .catch((error) => console.log(error))
         }
     }
 
-    function getUnique() {
-        newrecipe = recipes
-            .map(e => e['id'])
-            .map((e, i, final) => final.indexOf(e) === i && i)
-        .filter(e => recipes[e]).map(e => recipes[e])
-        return newrecipe;
-    }
+    // const getUnique = () => {
+    //     uniqueID = recipes
+    //         .map(e => e['id'])
+    //         .map((e, i, final) => final.indexOf(e) === i && i)
+    //     .filter(e => recipes[e]).map(e => recipes[e])
+    //     return uniqueID;
+    // }
 
-    console.log(getUnique())
+    // console.log(getUnique())
 
     useEffect(() => {
         getRecipe()
     },[favorite])
+
+    useEffect(() => {
+        let uniqueID = [];
+
+        const getUnique = () => {
+            uniqueID = recipes
+                .map(e => e['id'])
+                .map((e, i, final) => final.indexOf(e) === i && i)
+            .filter(e => recipes[e]).map(e => recipes[e])
+            return uniqueID;
+        }
+
+        console.log(getUnique())
+        setNewrec(uniqueID);
+        //console.log('newrec', newrec);
+    },[recipes])
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
@@ -62,7 +75,7 @@ function Favorites() {
             <h2>Favorites</h2>
 
             <div className='favorites-cnt'>
-                {newrecipe.map((recipe) => {
+                {newrec.map((recipe) => {
                     return (
                         <div key={recipe.id}>
                             <div className='favorite-page'>
