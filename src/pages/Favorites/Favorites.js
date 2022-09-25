@@ -4,67 +4,56 @@ import FavoritesContext from '../../FavoritesContext';
 import { Link } from 'react-router-dom';
 import { BsFillTrashFill } from 'react-icons/bs';
 import './Favorites.css';
-import { getRecipeInfo, getAllRecipes } from '../../api';
+import { getAllRecipes, getRecipeInfo } from '../../api';
 
 function Favorites() {
 
-    //let recipe = [];
+    let newrecipe = [];
 
     const { favorite, setFavorite } = useContext(FavoritesContext);
     const [recipes, setRecipes] = useState([]);
 
-    // const getRecipe = () => {
-    //     for (let i = 0; i < favorite.length; i++) {
-    //         const element = favorite[i];
-    //         getRecipeInfo(element)
-    //         .then((response) => {
-    //             let title = response.data.title;
-    //             let image = response.data.image;
-    //             let id = response.data.id;
-    //             // let result = recipes.filter(o1 => favorite.some(o2 => o1.id === o2));
-    //             // let result = recipes.find(x => x.id === 658276)
-    //             // console.log(title)
-    //             // recipe.push({id: id, title: title, image: image})
-    //             // if(recipes.includes(element))
-    //             // setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+    const getRecipe = () => {
+        if(favorite.length !== recipes.length) {
+            for (let i = 0; i < favorite.length; i++) {
+                const element = favorite[i];
+                getRecipeInfo(element)
+                .then((response) => {
+                    let title = response.data.title;
+                    let image = response.data.image;
+                    let id = response.data.id;
+                    setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+                })
+                .catch((error) => console.log(error))
+            }
+        }
+    }
 
-    //             let check = recipe.filter(item => item !== id);
-    //             if(check) {
-    //                 recipe.push({id: id, title: title, image: image});
-    //             }
-    //         })
-    //         .catch((error) => console.log(error))
-    //     }
-    // }
+    function getUnique() {
+        newrecipe = recipes
+            .map(e => e['id'])
+            .map((e, i, final) => final.indexOf(e) === i && i)
+        .filter(e => recipes[e]).map(e => recipes[e])
+        return newrecipe;
+    }
 
-    // useEffect(() => {
-    //     getRecipe()
-    //     console.log('dentro use effect', recipe)
-    // },[])
+    console.log(getUnique())
 
     useEffect(() => {
-        getAllRecipes()
-        .then((response) => {
-            setRecipes((response.data.results))
-        })
-    },[])
+        getRecipe()
+    },[favorite])
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
     }
 
     const removeFavorite = (id) => {
-        // const newFavoriteList = favorite.filter((item) => item.id !== id);
-        // setFavorite(newFavoriteList);
-        // saveToLocalStorage(newFavoriteList);
-
         let index = favorite.indexOf(id);
         let newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
         setFavorite(newFavoriteList);
         saveToLocalStorage(newFavoriteList);
+        window.location.reload(false);
     }
-
-    let findfavorite = recipes.filter(recipe => favorite.includes(recipe.id));
 
     return (
         <div>
@@ -73,7 +62,7 @@ function Favorites() {
             <h2>Favorites</h2>
 
             <div className='favorites-cnt'>
-                {findfavorite.map((recipe) => {
+                {newrecipe.map((recipe) => {
                     return (
                         <div key={recipe.id}>
                             <div className='favorite-page'>

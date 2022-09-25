@@ -28,11 +28,11 @@ export function FavoritesProvider({ children }) {
 
     const removeFavorite = (id, heartIcon) => {
         if (heartIcon) {
-            // let index = favorite.indexOf(id);
-            // const newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)]
-            const newFavoriteList = favorite.filter((item) => item.id !== id);
+            let index = favorite.indexOf(id);
+            const newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)]
             setFavorite(newFavoriteList);
             saveToLocalStorage(newFavoriteList);
+            console.log('rimosso')
         };
     };
 
