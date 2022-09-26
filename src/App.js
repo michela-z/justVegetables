@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/searched/:search" element={<Searched />} />
             <Route path="/recipe/:name" element={<Recipe />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favorites/" element={<Favorites />} />
           </Routes>
         </BrowserRouter>
     </FavoritesProvider>
