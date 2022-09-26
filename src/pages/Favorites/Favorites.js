@@ -10,19 +10,21 @@ function Favorites() {
 
     const { favorite, setFavorite } = useContext(FavoritesContext);
     const [recipes, setRecipes] = useState([]);
-    const [newrec, setNewrec] = useState([]);
+    const [newrecipes, setNewrecipes] = useState([]);
 
     const getRecipe = () => {
-        for (let i = 0; i < favorite.length; i++) {
-            const element = favorite[i];
-            getRecipeInfo(element)
-            .then((response) => {
-                let title = response.data.title;
-                let image = response.data.image;
-                let id = response.data.id;
-                setRecipes(prev => [...prev, {id: id, title: title, image: image}])
-            })
-            .catch((error) => console.log(error))
+        if(favorite.length !== newrecipes.length) {
+            for (let i = 0; i < favorite.length; i++) {
+                const element = favorite[i];
+                getRecipeInfo(element)
+                .then((response) => {
+                    let title = response.data.title;
+                    let image = response.data.image;
+                    let id = response.data.id;
+                    setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+                })
+                .catch((error) => console.log(error))
+            }
         }
     }
 
@@ -52,9 +54,8 @@ function Favorites() {
         }
 
         console.log(getUnique())
-        setNewrec(uniqueID);
-        //console.log('newrec', newrec);
-    },[recipes])
+        setNewrecipes(uniqueID);
+    },[recipes, favorite])
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
@@ -73,9 +74,8 @@ function Favorites() {
             <Navbar />
             <div className='main-container'>
             <h2>Favorites</h2>
-
             <div className='favorites-cnt'>
-                {newrec.map((recipe) => {
+                {newrecipes.map((recipe) => {
                     return (
                         <div key={recipe.id}>
                             <div className='favorite-page'>
@@ -91,7 +91,6 @@ function Favorites() {
                     )
                 })}
             </div>
-
             </div>
         </div>
     )

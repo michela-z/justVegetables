@@ -20,9 +20,9 @@ export const getRecipeInfo = async (param) => {
     }
 }
 
-export const getAllRecipes = async () => {
+export const getAllRecipes = async (param) => {
     try {
-        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}`)
+        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${param}&diet=vegetarian&apiKey=${apiKey}`)
         return response;
     } catch (error) {
         console.log(error)
