@@ -23,7 +23,6 @@ function Serched() {
             <div className='main-container searched-cnt'>
                 <div className='searched-title'>
                     <h2>{params.search} recipes</h2>
-                    {/* <button className="button" onClick={() => {setOffset((prev) => prev + 1)}}>Load More</button> */}
                 </div>
                 <div className='searched'>
                     {searched.map((item) => {
