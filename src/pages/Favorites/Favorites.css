@@ -57,3 +57,20 @@
     color: #00cc77ba;
     margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    .favorite-page {
+        width: 90%;
+        margin: auto;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    .favorite-trash {
+        padding: 5px;
+        height: 40px;
+        margin: auto 7px;
+    }
+    .favorite-page h3 {
+        font-size: 1.2rem;
+    }
+}

@@ -11,14 +11,14 @@
     z-index: 10;
 }
 
-.favor {
+.favorite-link {
     color: rgb(255, 255, 255);
     font-weight: 400;
     margin-left: 30px;
     width: 100%;
 }
 
-.favor:hover {
+.favorite-link:hover {
     text-decoration: underline 1px white;
 }
 
@@ -35,4 +35,18 @@
 .logo {
     width: 20px;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+        padding: 20px;
+    }
+    .favorite-link {
+        margin-top: 10px;
+        margin-left: auto;
+    }
 }

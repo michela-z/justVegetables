@@ -36,16 +36,12 @@ function Favorites() {
             .filter(e => recipes[e]).map(e => recipes[e])
             return uniqueID;
         }
-        console.log('get unique', getUnique())
+        console.log(getUnique())
         setNewrecipes(uniqueID);
-        console.log('primo use eff, recipes', recipes)
-        console.log('primo use eff, favorite', favorite)
     },[favorite, recipes])
 
     useEffect(() => {
         getRecipe()
-        console.log('secondo use eff, favorite', favorite)
-        //console.log(newrecipes);
     },[favorite])
 
     const saveToLocalStorage = (items) => {
@@ -57,7 +53,6 @@ function Favorites() {
         let newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
         setFavorite(newFavoriteList);
         saveToLocalStorage(newFavoriteList);
-        //window.location.reload(false);
     }
 
     return (

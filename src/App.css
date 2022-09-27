@@ -70,97 +70,20 @@ h2 {
         height: auto;
         margin-top: 30px;
     }
-    .vegetarian, .vegan {
-        margin-bottom: 50px;
-        height: auto;
-    }
-    .card-container {
-        margin-top: 20px;
-        display: wrap;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .card {
-        width: auto;
-    }
 }
 
-
 @media only screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 130px;
-        padding: 20px;
-    }
-    .searchbar {
-        justify-content: center;
-        margin-top: 20px;
-    }
     h2 {
         text-align: center;
     }
-    .vegetarian, .vegan {
-        padding-bottom: 50px;
-    }
     .button {
+        width: 150px;
+        height: 50px;
+        font-size: 1.2rem;
         z-index: 2;
         top: auto;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-    }
-    .mobile {
-        display: inline;
-    }
-    .card-title {
-        text-align: center;
-    }
-    /* RECIPE PAGE */
-    .recipe-container {
-        margin-top: 20px;
-        padding: 20px;
-    }
-    .recipe-container h2 {
-        font-size: 2rem;
-    }
-    .tag-container {
-        margin: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .gray-container {
-        flex-direction: column;
-        padding: 10px;
-        margin-top: 20px;
-    }
-    .gray-container img {
-        width: 100%;
-    }
-    .all-info {
-        margin-left: 0;
-    }
-    .all-info li {
-        margin-left: 20px;
-    }
-    .favor {
-        margin-top: 10px;
-        margin-left: auto;
-    }
-    .favorite-page {
-        width: 90%;
-        margin: auto;
-        height: 70px;
-        margin-bottom: 20px;
-    }
-    .favorite-trash {
-        padding: 5px;
-        height: 40px;
-        margin: auto 7px;
-    }
-    .favorite-page h3 {
-        font-size: 1.2rem;
     }
 }

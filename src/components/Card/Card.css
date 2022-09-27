@@ -67,3 +67,15 @@
 .card-title {
     font-weight: bold;
 }
+
+@media only screen and (max-width: 920px) {
+    .card {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card-title {
+        text-align: center;
+    }
+}

@@ -7,3 +7,22 @@
     overflow: hidden;
     position: relative;
 }
+
+@media only screen and (max-width: 920px) {
+    .vegetarian {
+        margin-bottom: 50px;
+        height: auto;
+    }
+    .card-container {
+        margin-top: 20px;
+        display: wrap;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .vegetarian {
+        padding-bottom: 50px;
+    }
+}

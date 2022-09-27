@@ -123,3 +123,33 @@
     display: flex;
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .recipe-container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .recipe-container h2 {
+        font-size: 2rem;
+    }
+    .tag-container {
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .gray-container {
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .gray-container img {
+        width: 100%;
+    }
+    .all-info {
+        margin-left: 0;
+    }
+    .all-info li {
+        margin-left: 20px;
+    }
+}

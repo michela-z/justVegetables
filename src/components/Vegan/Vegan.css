@@ -8,3 +8,21 @@
     position: relative;
 }
 
+@media only screen and (max-width: 920px) {
+    .vegan {
+        margin-bottom: 50px;
+        height: auto;
+    }
+    .card-container {
+        margin-top: 20px;
+        display: wrap;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .vegan {
+        padding-bottom: 50px;
+    }
+}

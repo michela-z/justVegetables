@@ -20,7 +20,7 @@ function Navbar() {
             </Link>
             <Searchbar />
             <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favor'>Favorites: <span>{favorite.length}</span></h4>
+                <h4 className='favorite-link'>Favorites: <span>{favorite.length}</span></h4>
             </Link>
             </div>
     )
