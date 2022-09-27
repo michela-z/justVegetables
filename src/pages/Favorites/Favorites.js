@@ -13,6 +13,7 @@ function Favorites() {
     const [newrecipes, setNewrecipes] = useState([]);
 
     const getRecipe = () => {
+        setRecipes([]);
         for (let i = 0; i < favorite.length; i++) {
             const element = favorite[i];
             getRecipeInfo(element)
@@ -27,10 +28,6 @@ function Favorites() {
     }
 
     useEffect(() => {
-        getRecipe()
-    },[favorite])
-
-    useEffect(() => {
         let uniqueID = [];
         const getUnique = () => {
             uniqueID = recipes
@@ -39,9 +36,17 @@ function Favorites() {
             .filter(e => recipes[e]).map(e => recipes[e])
             return uniqueID;
         }
-        console.log(getUnique())
+        console.log('get unique', getUnique())
         setNewrecipes(uniqueID);
-    },[recipes])
+        console.log('primo use eff, recipes', recipes)
+        console.log('primo use eff, favorite', favorite)
+    },[favorite, recipes])
+
+    useEffect(() => {
+        getRecipe()
+        console.log('secondo use eff, favorite', favorite)
+        //console.log(newrecipes);
+    },[favorite])
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorites-recipes', JSON.stringify(items))
