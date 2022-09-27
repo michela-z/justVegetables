@@ -58,11 +58,15 @@
     margin-bottom: 20px;
 }
 
+.empty {
+    color: gray;
+}
+
 @media only screen and (max-width: 600px) {
     .favorite-page {
         width: 90%;
         margin: auto;
-        height: 70px;
+        height: 100px;
         margin-bottom: 20px;
     }
     .favorite-trash {
@@ -72,5 +76,9 @@
     }
     .favorite-page h3 {
         font-size: 1.2rem;
+    }
+    .favorite-image {
+        width: 100px;
+        object-fit: cover;
     }
 }

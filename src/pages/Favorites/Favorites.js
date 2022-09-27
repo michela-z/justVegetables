@@ -61,7 +61,7 @@ function Favorites() {
             <div className='main-container'>
             <h2>Favorites</h2>
             <div className='favorites-cnt'>
-                {newrecipes.map((recipe) => {
+                {favorite.length !== 0 ? newrecipes.map((recipe) => {
                 return (
                     <div key={recipe.id}>
                         <div className='favorite-page'>
@@ -76,7 +76,7 @@ function Favorites() {
                         </div>
                     </div>
                 )
-                })}
+                }) : <p className='empty'>No favorites</p>}
             </div>
             </div>
         </div>
