@@ -33,4 +33,4 @@ Nel terminale eseguire:
 
 
 ## Contatti
-Michela Zallocco ~ [Instagram](https://www.instagram.com/michelazallocco/) ~ [Linkedin](https://www.linkedin.com/in/michela-zallocco-a30b531a1/) ~ michelazallocco94@gmail.com
+Michela Zallocco ~ [Instagram](https://www.instagram.com/michelazallocco/) ~ [Linkedin](https://www.linkedin.com/in/michelazallocco/) ~ michelazallocco94@gmail.com
