@@ -3,17 +3,12 @@ import Card from '../Card/Card';
 import './Vegetarian.css';
 import { getRecipes } from "../../api";
 
-
-//import data from '../../data';
-
 function Vegetarian() {
 
     const [recipes, setRecipes] = useState([]);
     const [offset, setOffset] = useState(0);
 
     const urlParams = 'vegetarian';
-    
-    // //const URL = `https://api.spoonacular.com/recipes/complexSearch?query=vegetarian&apiKey=d2c828e2a18c4b53871971851c1f1a77&number=1`;
 
     useEffect(() => {
         getRecipes(urlParams, offset)
